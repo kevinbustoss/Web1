@@ -1,0 +1,290 @@
+
+:root {
+    --primario: rgb(131, 154, 82);
+    --primario-oscuro: rgb(76, 115, 208);
+    --texto: black;
+    --fondo: pink;
+    --borde: red;
+    --blanco: white;
+    --error: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--fondo);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primario);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    color: blue;
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+figure {
+    text-align: center;
+    margin: 25px 0;
+}
+
+figure img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+nav {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--primario);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--primario);
+    color: white;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tarjeta {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta h2 {
+    color: var(--primario);
+    margin-top: 0;
+    border-bottom: 2px solid var(--borde);
+    padding-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: var(--texto);
+    margin-top: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primario);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--borde);
+}
+
+tr:nth-child(even) {
+    background-color: #eff6ff;
+}
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form div {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: white;
+    color: var(--texto);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input:not(:focus):invalid,
+select:not(:focus):invalid,
+textarea:not(:focus):invalid {
+    border-color: var(--error);
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.aceptacion label {
+    display: inline;
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primario-oscuro);
+}
+
+footer {
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    header {
+        margin: 10px;
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    main {
+        padding: 0 12px;
+    }
+
+    .tarjeta {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+}
+
+
+
