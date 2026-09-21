@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio semana 4</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 1.5rem; }
+    h2 { margin-top: 2.5rem; }
+    .tarjeta { background: #4f46e5; color: #fff; padding: 1rem; border-radius: 8px; }
+    .caja    { background: #3b82f6; color: #fff; padding: 1rem; border-radius: 8px; }
+    section  { border: 2px dashed #94a3b8; padding: 10px; }
+
+    /* ===== EXPERIMENTO 1: la última fila ===== */
+    .con-flex { display: flex; flex-wrap: wrap; gap: 16px; }
+    .con-flex .tarjeta { flex: 1 1 300px; }
+
+    .con-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    /*el flexFlexbox permite que la última fila distribuya las tarjetas sobrantes de manera diferente,
+    /*mientras que Grid mantiene la estructura de las columnas.*/
+
+    /* ===== EXPERIMENTO 2: el eje que se voltea ===== */
+    .ejes {
+      display: flex;
+      min-height: 300px;
+      gap: 12px;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      /* PASO 2: agrega aquí flex-direction: column; y NO cambies nada más */
+      /*justify-content trabaja sobre el eje principal y align-items trabaja*/
+      /*sobre el eje secundario. Al cambiar flex-direction a column, el eje*/
+      /*principal pasa de horizontal a vertical por ser principal*/
+    }
+
+    /* ===== EXPERIMENTO 3: la palabra que rompe el layout ===== */
+    /* Pruébalas UNA POR UNA sobre .con-grid .tarjeta y compara:   */
+    /* .con-grid .tarjeta { min-width: 0; }                        */
+    /* .con-grid .tarjeta { overflow-wrap: break-word; }           */
+    /* .con-grid .tarjeta { overflow: hidden; }                    */
+    /* La palabra larga puede ensanchar una columna porque el contenido tiene un ancho mínimo automático*/
+
+    /* ===== EXPERIMENTO 4: mover cosas sin tocar el HTML ===== */
+    .pagina {
+      display: grid;
+      gap: 10px;
+      min-height: 320px;
+      grid-template-columns:  1fr 200px;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "cabecera" 
+        "contenido"
+        "lateral"
+        "pie";
+      /* PASO 4: inviértelo (lateral a la derecha) y luego apílalo (lateral arriba) */
+      /* no toque lineas de html, solo el css */
+    }
+    .pagina > header { grid-area: cabecera; }
+    .pagina > aside  { grid-area: lateral; }
+    .pagina > main   { grid-area: contenido; }
+    .pagina > footer { grid-area: pie; }
+    .pagina > * { background: #eef2ff; border: 1px solid #c7d2fe; padding: 1rem; }
+
+    /* ===== EXPERIMENTO 5: gap vs margin ===== */
+    .con-margin { display: flex; flex-wrap: wrap; }
+    .con-margin .tarjeta { flex: 1 1 200px; margin: 8px; }
+
+    .con-gap { display: flex; flex-wrap: wrap; gap: 16px; }
+    .con-gap .tarjeta { flex: 1 1 200px; }
+    /*Con margin, cada tarjeta tiene su propio espacio alrededor, por eso también queda espacio*/
+    /*entre las tarjetas y el borde del contenedor. En cambio, con gap, el espacio lo controla el contenedor*/
+    /*y se aplica solamente entre las tarjetas. */
+  </style>
+</head>
+<body>
+
+  <h2>1a · Siete tarjetas con FLEX</h2>
+  <section class="con-flex">
+    <div class="tarjeta">1</div><div class="tarjeta">2</div><div class="tarjeta">3</div>
+    <div class="tarjeta">4</div><div class="tarjeta">5</div><div class="tarjeta">6</div>
+    <div class="tarjeta">7</div>
+  </section>
+
+  <h2>1b · Las mismas siete con GRID</h2>
+  <section class="con-grid">
+    <div class="tarjeta">1</div><div class="tarjeta">2</div><div class="tarjeta">3</div>
+    <div class="tarjeta">4</div><div class="tarjeta">5</div><div class="tarjeta">6</div>
+    <!-- EXPERIMENTO 3: cámbiale el texto a esta tarjeta por la palabra larga -->
+    <div class="tarjeta">esternocleidomastoideo</div>
+  </section>
+
+  <h2>2 · El eje que se voltea</h2>
+  <section class="ejes">
+    <div class="caja">A</div><div class="caja">B</div><div class="caja">C</div>
+  </section>
+
+  <h2>4 · Mover cosas sin tocar el HTML</h2>
+  <div class="pagina">
+    <header>Cabecera</header>
+    <aside>Lateral</aside>
+    <main>Contenido</main>
+    <footer>Pie</footer>
+  </div>
+
+  <h2>5a · Separadas con MARGIN</h2>
+  <section class="con-margin">
+    <div class="tarjeta">1</div><div class="tarjeta">2</div><div class="tarjeta">3</div>
+  </section>
+
+  <h2>5b · Separadas con GAP</h2>
+  <section class="con-gap">
+    <div class="tarjeta">1</div><div class="tarjeta">2</div><div class="tarjeta">3</div>
+  </section>
+
+</body>
+</html>
