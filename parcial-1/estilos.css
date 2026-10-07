@@ -1,0 +1,87 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f5f9;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+
+.tarjeta {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 320px;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.tarjeta__foto {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  border: 4px solid #e0e7ff;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+
+.tarjeta__nombre {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.tarjeta__cargo {
+  font-size: 15px;
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+
+.tarjeta__acciones {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+
+.btn--primario {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+}
+
+.btn--primario:hover {
+  background-color: #4338ca;
+}
+
+.btn--secundario {
+  background-color: #ffffff;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+}
+
+.btn--secundario:hover {
+  background-color: #eef2ff;
+}
