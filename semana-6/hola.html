@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="src/output.css">
 
+
 </head>
 <body>
     <!--
@@ -247,6 +248,55 @@
     8  | Adjudicator Rick          | Dead    | Human   | unknown                       | Citadel of Ricks
     image: https://rickandmortyapi.com/api/character/avatar/{id}.jpeg
   -->
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador Rick and Morty</title>
+  <!-- Aquí enlazas tus estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Explorador Rick & Morty</h1>
+  </header>
+
+  <main class="container">
+    <!-- Formulario y buscador (Paso 3) -->
+    <form id="form-filtros" class="filtros">
+      <input 
+        type="search" 
+        id="input-buscador" 
+        placeholder="Buscar por nombre..." 
+        autocomplete="off"
+      >
+      
+      <!-- Select de categoría (Paso 4) -->
+      <select id="select-status">
+        <option value="">Todos los estados</option>
+        <option value="Alive">Alive</option>
+        <option value="Dead">Dead</option>
+        <option value="unknown">Unknown</option>
+      </select>
+    </form>
+
+    <p id="contador" class="contador">Cargando...</p>
+
+    <!-- La grilla DEBE estar vacía para que JavaScript inyecte las tarjetas (Paso 2) -->
+    <section id="grilla" class="grilla"></section>
+  </main>
+
+  <!-- Modal para los detalles (Paso 5) -->
+  <dialog id="modal-detalle" class="modal">
+    <div class="modal-contenido" id="modal-body"></div>
+    <button id="btn-cerrar-modal" class="btn-cerrar">&times;</button>
+  </dialog>
+
+  <!-- El archivo principal de JavaScript con type="module" -->
+  <script type="module" src="js/app.js"></script>
+</body>
+  
 
 
 
